@@ -1,0 +1,91 @@
+<img src='https://img.freepik.com/free-photo/rear-view-graduates-join-graduation-ceremony-university_108064-84.jpg?size=626&ext=jpg'
+  width='1366px' height='637px'/>
+<div class="captain" *ngIf="!signupForm">
+  <div class="col-sm-3">
+    <div class="form-group cngSelect">
+      <label style="color: white;">User Name</label>
+      <input
+      autocomplete="off"
+        type="text"
+        class="form-control"
+        [(ngModel)]="name"
+        name="name"
+      />
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group cngSelect">
+      <label style="color: white;">Password</label>
+      <input
+      autocomplete="off"
+        type="text"
+        class="form-control"
+        [(ngModel)]="password"
+        name="password"
+      />
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="btn_block">
+      <button
+        type="button"
+        class="btn btn-primary marRight10"
+        (click)='login()'
+      >
+        Login
+      </button>
+      <button
+      type="button"
+      class="btn btn-primary btnFix"
+      (click)='showSignup()'
+    >
+      Sign up
+    </button>
+    </div>
+  </div>
+
+</div>
+<div class="signup" *ngIf="signupForm">
+  <div class="col-sm-3">
+    <div class="form-group cngSelect">
+      <label style="color: white;">New User Name</label>
+      <input
+      autocomplete="off"
+        type="text"
+        class="form-control"
+        [(ngModel)]="newName"
+        name="newname"
+      />
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group cngSelect">
+      <label style="color: white;">Set Password</label>
+      <input
+      autocomplete="off"
+        type="text"
+        class="form-control"
+        [(ngModel)]="newPassword"
+        name="newpassword"
+      />
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="btn_block">
+      <button
+      type="button"
+      class="btn btn-primary btnFix marRight10"
+      (click)='signUp()'
+    >
+      Sign up
+    </button>
+    <button
+    type="button"
+    class="btn btn-primary btnFix"
+    (click)='signupForm = false'
+    >
+    back
+    </button>
+    </div>
+  </div>
+  </div>
