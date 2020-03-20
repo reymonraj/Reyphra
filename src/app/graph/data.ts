@@ -98,5 +98,8 @@ export class GraphData {
      course: 'Bachelor of Computer Applications(BCA)', type: 'Deemed', name: 'K.C.G. College of Technology'},
 
   ];
+  cred = [
+    { Name: 'udhaya', Password: '12345678'},
+  ];
 
 }

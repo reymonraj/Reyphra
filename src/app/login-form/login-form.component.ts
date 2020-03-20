@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GraphData } from '../graph/data';
 
 @Component({
   selector: 'app-login-form',
@@ -14,6 +15,7 @@ export class LoginFormComponent implements OnInit {
   newPassword: any;
   signupForm: any;
   constructor(
+    private graphsData: GraphData,
     private router: Router
     ) { }
 
@@ -23,11 +25,21 @@ export class LoginFormComponent implements OnInit {
   login() {
     const userName = localStorage.getItem('name');
     const userPass = localStorage.getItem('pass');
+    if (userName && userPass) {
     if (this.name === userName && this.password === userPass) {
       this.router.navigate(['/graph']);
     } else {
       alert('Wrong credentials');
     }
+  } else {
+    const localUserName = this.graphsData.cred[0].Name;
+    const localUserPass = this.graphsData.cred[0].Password;
+    if (this.name === localUserName && this.password === localUserPass) {
+      this.router.navigate(['/graph']);
+    } else {
+      alert('Wrong credentials');
+    }
+  }
     this.name = '';
     this.password = '';
   }
@@ -49,6 +61,6 @@ export class LoginFormComponent implements OnInit {
     }
   }
   showSignup() {
-    this.signupForm = true;
+      this.signupForm = true;
   }
 }
